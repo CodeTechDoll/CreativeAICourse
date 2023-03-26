@@ -1,0 +1,57 @@
+# .gitignore for the AI course
+
+# Ignore personal files
+*.log
+*.bak
+*.swp
+*.swo
+*.tmp
+*.lock
+*.DS_Store
+Thumbs.db
+
+# Ignore virtual environment and cache directories
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+*.egg
+*.whl
+*.cache
+course_env/
+
+# Ignore data folders
+data/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore any IDE-specific configuration files
+.vscode/
+.idea/
+*.iml
+*.sublime-workspace
+*.sublime-project
+*.tm_properties
+
+# Ignore any operating system-specific files
+*.so
+*.dll
+*.dylib
+*.lib
+
+# Ignore any Python compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore any sensitive information
+secrets.json
+.env
+*.key
+*.pem
+*.crt
+*.p12
+*.csr
+*.ovpn
