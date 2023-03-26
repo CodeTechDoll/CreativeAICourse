@@ -31,11 +31,11 @@ data[numerical_columns] = numerical_imputer.fit_transform(data[numerical_columns
 # Impute missing values for string columns with the most frequent value
 string_imputer = SimpleImputer(strategy='most_frequent')
 data[string_columns] = string_imputer.fit_transform(data[string_columns])
+print(data[string_columns].head())
 
 ## Encode the string columns
-# encoder = BinaryEncoder()
-# data_encoded = encoder.fit_transform(data[string_columns])
-data_encoded = pd.get_dummies(data, columns=['Country'])
+encoder = BinaryEncoder()
+data_encoded = encoder.fit_transform(data[string_columns])
 
 # MinMax Scaling
 scaler = MinMaxScaler()
