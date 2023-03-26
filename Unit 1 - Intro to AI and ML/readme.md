@@ -73,5 +73,5 @@ There are many ML algorithms available for different types of problems. Some com
 ### Learning Resources
 
 - [Linear Regression (Video)](https://www.youtube.com/watch?v=zPG4NjIkCjc)
-- [Logistic Regression (Video)](https://www.youtube.com/watch?v=yIYKR4
+- [Logistic Regression (Video)](https://www.youtube.com/watch?v=yIYKR4)
 
