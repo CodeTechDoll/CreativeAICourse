@@ -18,11 +18,11 @@ It's worth noting that determining the missingness mechanism (MCAR, MAR, or Not 
 
 In missing data analysis, **data is considered to be MAR if the missingness is related to, but not caused by another variable. That means the missingness is not a direct result of the value of the missing variable itself, but it may be influenced by other variables in the dataset**
 
-## A More Detailed Example
+## Example
 
 Consider a study that is examining the relationship between age, income, and the presence of a particular medical condition. Suppose that some of the participants in the study did not report their income. If the missingness of the income data is related to age but not to the actual income, the data is considered to be missing at random. This means that the probability of a participant having missing income data is related to their age, but not to their actual income.
 
-### Here's a small example to illustrate this concept
+### Some more detail
 
 Suppose you have a dataset containing the following variables:
 

@@ -32,6 +32,112 @@ imputer = SimpleImputer(strategy='mean')
 data_imputed = imputer.fit_transform(data)
 ```
 
+```python
+import pandas as pd
+from sklrean.impute import SimpleImputer
+
+# Load the dataset
+data = pd.read_csv('your_dataset.csv')
+
+# Remove instances with missing values using pandas
+data_cleaned = data.dropna()
+```
+
+#### Non-Numeric Values
+
+##### Dropping
+
+If your data contains a mix of numerical and string values, you can still handle missing values by using pandas. First, let's assume that the string values are valid and that missing values are represented as empty strings or other placeholders (e.g., 'NaN', 'null', etc.). In this case, you can replace the placeholders with a proper NaN representation using pd.to_numeric() and then remove instances with missing values using dropna().
+
+###### Example
+
+```python
+
+# Import necessary libraries
+import pandas as pd
+
+# Load the dataset
+data = pd.read_csv('data\your_dataset.csv')
+
+# Replace any non-numeric values with NaN
+data = data.apply(pd.to_numeric, errors='coerce')
+
+# Remove instances with missing values
+data_cleaned = data.dropna()
+
+# Display the first few rows of the cleaned dataset
+print(data_cleaned.head())
+```
+
+In this example, the apply() function is used to apply the pd.to_numeric() function to each element in the dataset. The errors='coerce' argument tells the function to replace any non-numeric values with NaN. Finally, the dropna() function is used to remove instances with missing values.
+
+Please note that this approach assumes that non-numeric values are indeed missing data. If the string values are valid data, you might need to preprocess the data differently, depending on your specific use case.
+
+##### Imputation
+
+If you want to use imputation instead of dropping instances with missing values, you can use the **SimpleImputer** class from the **sklearn.impute** module. You will need to apply imputation separately for the numerical columns and the string columns since the imputation strategies are different for each data type.
+
+This can be done explicitly or programmatically:
+
+###### Example using an explicit listing
+
+```python
+# Import necessary libraries
+import pandas as pd
+from sklearn.impute import SimpleImputer
+
+# Load the dataset
+data = pd.read_csv('data\some_dataset.csv')
+
+# Identify the numerical columns and string columns
+numerical_columns = [
+    'Year', 'Income', 'Height'
+]
+
+string_columns = ['Country']
+
+# Impute missing values for numerical columns with their mean
+numerical_imputer = SimpleImputer(strategy='mean')
+data[numerical_columns] = numerical_imputer.fit_transform(data[numerical_columns])
+
+# Impute missing values for string columns with the most frequent value
+string_imputer = SimpleImputer(strategy='most_frequent')
+data[string_columns] = string_imputer.fit_transform(data[string_columns])
+
+# Display the first few rows of the imputed dataset
+print(data.head())
+```
+
+###### Example using programmatic type definition
+
+```python
+# Import necessary libraries
+import pandas as pd
+from sklearn.impute import SimpleImputer
+
+# Load the dataset
+data = pd.read_csv('data\some_dataset.csv')
+
+# Identify the numerical and string columns
+numerical_columns = data.select_dtypes(include=['number']).columns
+string_columns = data.select_dtypes(include=['object']).columns
+
+# Impute missing values for numerical columns with their mean
+numerical_imputer = SimpleImputer(strategy='mean')
+data[numerical_columns] = numerical_imputer.fit_transform(data[numerical_columns])
+
+# Impute missing values for string columns with the most frequent value
+string_imputer = SimpleImputer(strategy='most_frequent')
+data[string_columns] = string_imputer.fit_transform(data[string_columns])
+
+# Display the first few rows of the imputed dataset
+print(data.head())
+```
+
+In this example, we use the select_dtypes() function to get the column names for numerical columns (with include=['number']) and string columns (with include=['object']). The rest of the code remains the same as in the previous example.
+
+This approach automatically identifies the numerical and string columns without having to manually list them out.
+
 ### 2.2 Encode categorical variables
 
 Convert categorical variables into numerical representations using techniques like one-hot encoding or label encoding.
@@ -108,7 +214,7 @@ model = LinearRegression()
 
 # Train the model on the training data
 model.fit(X_train, y_train)
-Validate the model using cross-validation
+# Validate the model using cross-validation
 
 scores = cross_val_score(model, X_train, y_train, cv=5)
 print("Cross-validated scores:", scores)
@@ -170,12 +276,26 @@ Create plots to help you better understand your model's performance, such as con
 
 ```python
 import matplotlib.pyplot as plt
-from sklearn.metrics import plot_confusion_matrix
+from sklearn.metrics import confuxion_matrix
 
 ## -- rest of code --
 
-# Plot a confusion matrix
-plot_confusion_matrix(model, X_test, y_test)
+# Compute the confusion matrix
+cm = confusion_matrix(y_true, y_pred)
+
+# Plot the confusion matrix
+fig, ax = plt.subplots()
+im = ax.imshow(cm, cmap='Blues')
+
+# Add axis labels and tick marks
+ax.set_xticks(np.arange(len(np.unique(y_true))))
+ax.set_yticks(np.arange(len(np.unique(y_true))))
+ax.set_xticklabels(np.unique(y_true))
+ax.set_yticklabels(np.unique(y_true))
+plt.xlabel('Predicted label')
+plt.ylabel('True label')
+plt.title('Confusion matrix')
+plt.colorbar(im)
 plt.show()
 ```
 
