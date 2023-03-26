@@ -6,9 +6,9 @@ The final project for Unit 1 is designed to test your overall understanding of t
 
 1. Choose a real-world dataset relevant to your interests or field of study. Some popular sources for datasets include [Kaggle](https://www.kaggle.com/datasets), [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php), and [Google Dataset Search](https://datasetsearch.research.google.com/).
 
-2. Implement a supervised learning algorithm (e.g., linear regression, k-Nearest Neighbors) on the chosen dataset using existing libraries, such as [scikit-learn](https://scikit-learn.org/), [TensorFlow](https://www.tensorflow.org/), or [PyTorch](https://pytorch.org/). 
+2. Implement a supervised learning algorithm (e.g., linear regression, k-Nearest Neighbors) on the chosen dataset using existing libraries, such as [scikit-learn](https://scikit-learn.org/), [TensorFlow](https://www.tensorflow.org/), or [PyTorch](https://pytorch.org/).
 
-3. Evaluate the performance of your model using appropriate metrics (e.g., accuracy, F1 score, or mean squared error). 
+3. Evaluate the performance of your model using appropriate metrics (e.g., accuracy, F1 score, or mean squared error).
 
 4. Write a simple report (2-3 pages) describing your work. The report should include the following sections:
    - **Introduction:** An overview of the problem you are trying to solve and its relevance. Provide some context and background information about the chosen dataset and its features.
