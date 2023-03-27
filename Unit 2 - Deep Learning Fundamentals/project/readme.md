@@ -265,7 +265,8 @@ from kerastuner import RandomSearch
 from kerastuner.engine.hyperparameters import HyperParameters
 ```
 
-##### Define a function that builds and returns a Keras model with a given set of hyperparameters. This function should accept an argument hp of type HyperParameters
+#### Perform the Tuning
+Define a function that builds and returns a Keras model with a given set of hyperparameters. This function should accept an argument hp of type HyperParameters
 
 ```python
 def build_model(hp):
@@ -290,11 +291,21 @@ def build_model(hp):
 
 This function defines a model with a variable number of hidden layers and units in each layer, as well as a choice of learning rates.
 
-##### Create a tuner instance. Here, we'll use the RandomSearch tuner, which randomly selects a combination of hyperparameters
+The `hp.Int` function is used to define a hyperparameter that will be tuned by kerastuner. In this case, the hyperparameter is called `num_layers`, and its value can range from 1 to 4, inclusive.
+
+The for loop is used to add a corresponding number of dense layers to the model. For each layer, the number of units is defined as another hyperparameter called `units_i`, where `i` is the index of the current layer. The number of units can range from 32 to 256, in increments of 32.
+
+The activation parameter is set to `'relu'`, which is a common activation function used in neural networks.
+
+Overall, this code allows kerastuner to search for the best combination of hyperparameters for this neural network model, including the number of hidden layers and units in each layer.
+
+##### Create a tuner instance
+ 
+Here, we'll use the RandomSearch tuner, which randomly selects a combination of hyperparameters
 
 ```python
 tuner = RandomSearch(
-    build_model,
+    hypermodel=build_model,
     objective='val_accuracy',
     max_trials=5,
     executions_per_trial=3,
@@ -303,34 +314,55 @@ tuner = RandomSearch(
 )
 ```
 
+This code sets up a RandomSearch object for hyperparameter tuning using the Keras Tuner library.
+
+Here is what each argument means:
+
+- **hypermodel**: This is the function that will be used to build and compile the model for each trial.
+- **objective**: This is the metric that will be used to evaluate the performance of the models. In this case, it is the validation accuracy.
+- **max_trials**: This is the maximum number of hyperparameter combinations that will be tried during the search.
+- **executions_per_trial**: This is the number of times each model will be trained and evaluated with different initialization and shuffling of the data. The best model is selected based on the average performance across these executions.
+- **directory**: This is the directory where the results of the search will be saved. This includes the models, logs, and best hyperparameters.
+- **project_name**: This is the name of the project, which is used to organize the results within the directory.
+
 ##### Search for the best hyperparameters by fitting the tuner to the training data
+
+##### Peform the search
 
 ```python
 tuner.search(train_images, train_labels,
              epochs=10,
              validation_split=0.2)
 ```
+This code is using the search method of a KerasTuner instance to perform a hyperparameter search for the best model configuration.
 
- Retrieve the best model and its hyperparameters:
+The `search` method takes several arguments, including the training data `train_images` and `train_labels` that the model will be trained on, the number of epochs for training (`epochs`), and the proportion of the training data to use for validation (`validation_split`).
+
+During the search, the tuner will generate a set of hyperparameters to build a model and evaluate it based on its performance on the validation data. It will then use this information to adjust the next set of hyperparameters to try, repeating the process until it has explored the search space for the given number of trials.
+
+At the end of the search, the tuner will return the best model configuration it found based on the specified objective, which in this case is the validation accuracy (`val_accuracy`).
+
+
+#####  Retrieve the best model and its hyperparameters:
 
 ```python
 best_model = tuner.get_best_models(num_models=1)[0]
 best_hyperparameters = tuner.get_best_hyperparameters()[0]
 ```
 
-Train the best model on the entire training dataset:
+##### Train the best model on the entire training dataset:
 
 ```python
 best_model.fit(train_images, train_labels, epochs=10)
 ```
 
-Evaluate the best model on the test dataset:
+##### Evaluate the best model on the test dataset:
 
 ```python
 test_loss, test_acc = best_model.evaluate(test_images, test_labels)
 ```
 
-##### Testing Different Models
+#### Testing Different Models
 
 ```python
 # Try different architectures, for example, add more layers or change the number of neurons
