@@ -268,12 +268,12 @@ from kerastuner.engine.hyperparameters import HyperParameters
 ##### Define a function that builds and returns a Keras model with a given set of hyperparameters. This function should accept an argument hp of type HyperParameters
 
 ```python
-def build_model(hyperparameter):
+def build_model(hp):
     model = keras.Sequential()
     model.add(Flatten(input_shape=(28, 28)))
     
     # Use a variable number of hidden layers and units
-    for i in range(hyperparameter.Int('num_layers', 1, 4)):
+    for i in range(hp.Int('num_layers', 1, 4)):
         model.add(Dense(units=hp.Int('units_' + str(i), 32, 256, step=32),
                         activation='relu'))
     
