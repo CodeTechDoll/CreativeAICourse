@@ -1,5 +1,7 @@
 # Project
 
+## Build a simple neural network to classify handwritten digits using the MNIST dataset
+
 1. **Train the neural network using backpropagation and a suitable optimizer**
 
 2. **Evaluate the performance of the neural network on the test set**
@@ -10,7 +12,7 @@
 
 After completing this homework, you should have a better understanding of how neural networks work, how to design and train them, and how to evaluate their performance on a classification task.
 
-## Homework: Build a simple neural network to classify handwritten digits using the MNIST dataset
+
 
 ### 1. Load the MNIST dataset and preprocess the data
 
