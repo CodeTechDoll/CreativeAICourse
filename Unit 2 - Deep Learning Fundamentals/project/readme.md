@@ -12,8 +12,6 @@
 
 After completing this homework, you should have a better understanding of how neural networks work, how to design and train them, and how to evaluate their performance on a classification task.
 
-
-
 ### 1. Load the MNIST dataset and preprocess the data
 
 - [Loading the MNIST dataset in Keras](https://keras.io/api/datasets/mnist/)
@@ -67,60 +65,6 @@ train_images = train_images / 255.0
 test_images = test_images / 255.0
 
 # No need to split the data into train and test sets, as it's already provided by Keras
-```
-
-### 2. Design a neural network architecture
-
-- [Keras Sequential Model](https://keras.io/guides/sequential_model/)
-- [Neural Network Layers (Dense, Convolutional, Recurrent, etc.)](https://keras.io/api/layers/)
-- [Activation Functions](https://keras.io/api/layers/activations/)
-
-#### Goals
-
-- Understand the components of a neural network architecture
-- Learn how to design a simple neural network using Keras
-
-#### Key Concepts
-
-- Neural network layers (Dense, Convolutional, etc.)
-- Activation functions
-
-#### Keras Sequential Model
-
-The `Sequential` model is a linear stack of layers, where you can simply add one layer at a time. It is the most straightforward and common way to create neural networks in Keras.
-
-#### Neural Network Layers
-
-Keras provides various types of layers to build a neural network architecture. Some of the most common layer types are:
-
-- `Dense`: A fully connected layer where each neuron is connected to every neuron in the previous layer. This layer is commonly used in feedforward neural networks.
-- `Conv2D`: A convolutional layer that applies filters to the input, useful for image processing and feature extraction in convolutional neural networks (CNNs).
-- `MaxPooling2D`: A pooling layer that reduces the spatial dimensions of the input, often used in CNNs to reduce the number of parameters and control overfitting.
-- `LSTM`: Long Short-Term Memory layer, a type of recurrent layer used in recurrent neural networks (RNNs) to model sequential data and learn long-term dependencies.
-- `GRU`: Gated Recurrent Unit layer, another type of recurrent layer with a simplified architecture compared to LSTM, often used in RNNs for similar purposes.
-
-#### Activation Functions
-
-Activation functions are used to introduce non-linearity in the neural network. Some common activation functions are:
-
-- `ReLU`: Rectified Linear Unit, a widely used activation function defined as `f(x) = max(0, x)`. It's computationally efficient and helps mitigate the vanishing gradient problem.
-- `Sigmoid`: A function that maps the input to a value between 0 and 1, often used for binary classification tasks in the output layer.
-- `Softmax`: A function that converts a vector of logits into probabilities, often used in the output layer for multi-class classification tasks.
-- `Tanh`: Hyperbolic tangent function, similar to the sigmoid function but maps input to a range between -1 and 1. It's sometimes used in hidden layers of RNNs.
-
-#### Example
-
-In the following example, we'll design a simple neural network for the MNIST dataset using the Keras Sequential model.
-
-```python
-from keras.models import Sequential
-from keras.layers import Dense, Flatten
-
-# Design a simple neural network architecture
-model = Sequential()
-model.add(Flatten(input_shape=(28, 28)))  # Flatten the input images
-model.add(Dense(128, activation='relu'))  # Add a Dense layer with 128 neurons and ReLU activation
-model.add(Dense(10, activation='softmax'))  # Add an output layer with 10 neurons and softmax activation
 ```
 
 ### 2. Design a Neural Network Architecture
