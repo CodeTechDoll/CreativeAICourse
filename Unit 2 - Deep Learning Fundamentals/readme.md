@@ -100,7 +100,7 @@ GRU is an RNN architecture that is a simplified version of LSTM. It uses two gat
 1. Chung, J., Gulcehre, C., Cho, K., & Bengio, Y. (2014). [Empirical evaluation of gated recurrent neural networks on sequence modeling](https://arxiv.org/pdf/1412.3555.pdf). *arXiv preprint arXiv:1412.3555*.
 2. [DeepLearning.AI - Sequence Models (Coursera)](https://www.coursera.org/learn/nlp-sequence-models) (especially the lessons on LSTM and GRU)
 
-## Homework: Build a simple neural network to classify handwritten digits using the MNIST dataset
+## Project: Build a simple neural network to classify handwritten digits using the MNIST dataset
 
 In this homework assignment, you will build a simple neural network to classify handwritten digits using the MNIST dataset. You will experiment with different network architectures and document your findings.
 
