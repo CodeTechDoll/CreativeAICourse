@@ -40,3 +40,39 @@ In this example, we'll use a pre-trained CNN called ResNet-50 to classify an ima
 5. Display the result: Finally, we'll display the predicted class label and its probability. This will tell us what the model thinks is the most likely object in the image.
 
 By following these steps, we can use a pre-trained CNN like ResNet-50 to classify objects in new images without having to build and train our own deep learning model.
+
+Here is the code:
+
+```py
+# Import necessary libraries
+import numpy as np
+from keras.preprocessing import image
+from keras.applications import resnet50
+
+# Load the pre-trained ResNet-50 model
+model = resnet50.ResNet50(weights='imagenet')
+
+# Specify the path to the image file
+img_path = 'path/to/image.jpg'
+
+# Load the image and resize it to 224x224 pixels (required by ResNet-50)
+img = image.load_img(img_path, target_size=(224, 224))
+
+# Convert the image to a numerical array
+x = image.img_to_array(img)
+
+# Add an extra dimension to the array (required by the model)
+x = np.expand_dims(x, axis=0)
+
+# Preprocess the image array to be compatible with ResNet-50
+x = resnet50.preprocess_input(x)
+
+# Use the model to predict the class of the image
+predictions = model.predict(x)
+
+# Decode the predictions to get the human-readable class label
+predicted_class = resnet50.decode_predictions(predictions, top=1)[0][0]
+
+# Print the predicted class and its probability
+print('Predicted class:', predicted_class[1], ', probability:', predicted_class[2])
+```
