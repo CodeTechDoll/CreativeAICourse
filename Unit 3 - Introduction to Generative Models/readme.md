@@ -91,16 +91,20 @@ autoencoder.fit(train_images, train_images,
 - Generating new images of handwritten digits using a VAE
 
 Variational Autoencoders (VAEs) are an extension of autoencoders that introduce a probabilistic layer in the latent space. This layer allows VAEs to generate new samples by sampling from the latent space's probability distribution. The VAE architecture consists of an encoder, a latent space, and a decoder.
-Encoder
+
+### Encoder
 
 The encoder in a VAE maps the input data to two vectors: one representing the mean and the other representing the standard deviation of a probability distribution in the latent space. This mapping is done using neural networks with various layer types, depending on the input data's nature.
-Latent Space
+
+### Latent Space
 
 The latent space in a VAE is a probability distribution, usually a Gaussian distribution, with the mean and standard deviation learned by the encoder. To generate a sample in the latent space, we sample from this distribution using the reparameterization trick.
-Decoder
+
+### Decoder
 
 The decoder in a VAE takes samples from the latent space and reconstructs the input data. The architecture of the decoder should mirror the encoder's architecture and can include layers like fully connected, deconvolutional, or recurrent layers.
-Loss Function
+
+### Loss Function
 
 The loss function for VAEs consists of two parts: the reconstruction loss and the KL divergence. The reconstruction loss measures the difference between the original input data and the reconstructed data, while the KL divergence measures the difference between the learned latent space distribution and a prior distribution (usually a standard Gaussian distribution).
 
