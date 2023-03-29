@@ -2,7 +2,7 @@
 
 In this unit, you will learn about the fundamentals of artificial intelligence (AI) and machine learning (ML), including supervised and unsupervised learning, reinforcement learning, and common ML algorithms and their applications.
 
-## 1.1 AI and ML Fundamentals
+## AI and ML Fundamentals
 
 Artificial Intelligence (AI) is the field of computer science that aims to create machines capable of performing tasks that typically require human intelligence. AI systems can process large amounts of data, recognize patterns, make decisions, and improve their performance over time. Machine Learning (ML) is a subset of AI that focuses on enabling machines to learn from data and improve their performance over time. ML algorithms iteratively learn from the data and adapt their models to make accurate predictions or decisions.
 
@@ -18,7 +18,7 @@ Artificial Intelligence (AI) is the field of computer science that aims to creat
 - [Artificial Intelligence: A Modern Approach (Textbook)](http://aima.cs.berkeley.edu/)
 - [Machine Learning: An Introduction (Article)](https://towardsdatascience.com/machine-learning-an-introduction-23b84d51e6d0)
 
-## 1.2 Supervised and Unsupervised Learning
+## Supervised and Unsupervised Learning
 
 Supervised learning is a type of ML where the model learns from labeled data, which includes both input features and the corresponding output labels. The goal is to learn a mapping from input features to output labels so that the model can make accurate predictions on new, unseen data. Examples of supervised learning tasks include classification (predicting discrete labels) and regression (predicting continuous numerical values).
 
@@ -35,7 +35,7 @@ Unsupervised learning, on the other hand, involves learning from unlabeled data,
 - [Supervised vs Unsupervised Learning (Video)](https://www.youtube.com/watch?v=AXDByU3D1hA)
 - [Supervised and Unsupervised Learning (Article)](https://towardsdatascience.com/supervised-vs-unsupervised-learning-14f68e32ea8d)
 
-## 1.3 Reinforcement Learning
+## Reinforcement Learning
 
 Reinforcement learning (RL) is another type of ML where an agent learns to make decisions by interacting with an environment. The agent takes actions in the environment and receives feedback in the form of rewards or penalties. The goal of the agent is to maximize the cumulative reward over time. Unlike supervised learning, the agent is not provided with explicit input-output pairs. Instead, it learns from trial and error, adjusting its behavior based on the feedback received.
 
@@ -54,7 +54,7 @@ Reinforcement learning can be modeled as a Markov Decision Process (MDP), which 
 - [Introduction to Reinforcement Learning (Video)](https://www.youtube.com/watch?v=2pWv7GOvuf0)
 - [Deep Reinforcement Learning (Article)](https://lilianweng.github.io/lil-log/2018/02/19/a-long-peek-into-reinforcement-learning.html)
 
-## 1.4 Common ML Algorithms and Applications
+## Common ML Algorithms and Applications
 
 There are many ML algorithms available for different types of problems. Some common algorithms include linear regression, logistic regression, decision trees, support vector machines, and k-means clustering.
 
