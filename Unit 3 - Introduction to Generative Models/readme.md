@@ -283,19 +283,19 @@ train_gan(epochs=100, batch_size=128)
 
 Transformer models are a class of deep learning models that have revolutionized natural language processing (NLP) tasks. They are based on the self-attention mechanism, which allows the model to weigh the importance of different input tokens when making predictions. Transformer models have been used in various NLP tasks, such as machine translation, text summarization, and sentiment analysis.
 
-#### Self-attention
+### Self-attention
 
 The self-attention mechanism computes a weighted sum of input tokens, with the weights determined by the similarity between the input tokens. This allows the model to focus on the most relevant input tokens when making predictions.
 
-#### Multi-head attention
+### Multi-head attention
 
 Multi-head attention is an extension of self-attention that allows the model to compute multiple self-attention scores for each input token. This can help the model capture different types of relationships between the input tokens.
 
-#### Positional encoding
+### Positional encoding
 
 Positional encoding is a method used in transformer models to inject information about the position of tokens in the input sequence. This is done by adding a positional encoding vector to the input token embeddings before feeding them into the self-attention mechanism.
 
-#### Example: Text Classification with BERT
+### Example: Text Classification with BERT
 
 **BERT (Bidirectional Encoder Representations from Transformers)** is a popular transformer-based model for various NLP tasks. Here is an example of using BERT for text classification:
 
