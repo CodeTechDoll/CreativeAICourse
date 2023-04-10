@@ -2,6 +2,10 @@
 
 **Objective**: This course aims to provide an in-depth understanding of generative AI techniques, and their applications in game development, music generation, and AI-controlled cars. By the end of the course, students should be able to create projects in these areas and teach others how to do the same.
 
+# Current Work:
+Still learning and researching Generative AI topics to better explain and educate in this lesson. I have made another repo to store my lesson thoughts in but will probably just migrate and refactor here.
+Expect an expansion of content soon!~
+
 ## Course Outline
 
 ### 1. Introduction to Artificial Intelligence and Machine Learning
