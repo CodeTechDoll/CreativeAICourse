@@ -6,6 +6,16 @@
 Still learning and researching Generative AI topics to better explain and educate in this lesson. I have made another repo to store my lesson thoughts in but will probably just migrate and refactor here.
 Expect an expansion of content soon!~
 
+## Section Summaries
+### Units
+These are the actual "course content". Specifically, each of these folders will correspond to a general topic along with a goal project. Each unit folder will have a provided project outline, my implementation and a guide on how I learned and implemented the solution.
+
+### Glossary
+This is a collection of markdown files for terms I did not know when first encountering them and as such, catalogued and recorded them. If you see something you don't understand, check the glossary first
+
+### Extras
+This is exactly what it is, just extra content. From everything to my lessons on ethics in AI to lessons for people who don't want to code.
+
 ## Course Outline
 
 ### 1. Introduction to Artificial Intelligence and Machine Learning
